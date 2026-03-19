@@ -1,0 +1,515 @@
+---
+import Layout from '../layouts/Layout.astro';
+import carsData from '../data/cars.json';
+
+const title = "Admin - BLM CARS";
+
+// Get car ID from query params for editing
+const url = new URL(Astro.request.url);
+const editId = url.searchParams.get('edit');
+const deleteId = url.searchParams.get('delete');
+
+let carToEdit = null;
+if (editId) {
+  carToEdit = carsData.find(c => c.id === parseInt(editId));
+}
+
+// Generate next ID
+const nextId = Math.max(...carsData.map(c => c.id), 0) + 1;
+---
+
+<Layout title={title}>
+  <div class="min-h-screen bg-bg">
+    <!-- Header -->
+    <header class="bg-card border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <a href="/" class="text-white font-bold text-xl">BLM CARS</a>
+            <span class="text-text-secondary">/</span>
+            <span class="text-primary font-medium">Admin</span>
+          </div>
+          <a href="/" class="text-sm text-text-secondary hover:text-white transition-colors">
+            ← Retour au site
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Form Section -->
+        <div class="lg:col-span-1">
+          <div class="bg-card rounded-xl border border-white/5 p-6 sticky top-8">
+            <h2 class="text-xl font-bold text-white mb-6">
+              {carToEdit ? 'Modifier le véhicule' : 'Ajouter un véhicule'}
+            </h2>
+            
+            <form id="carForm" class="space-y-4">
+              <input type="hidden" name="id" value={carToEdit?.id || nextId} />
+              
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm text-text-secondary mb-1">Marque</label>
+                  <input 
+                    type="text" 
+                    name="make" 
+                    value={carToEdit?.make || ''}
+                    placeholder="Ex: BMW"
+                    class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-text-secondary mb-1">Modèle</label>
+                  <input 
+                    type="text" 
+                    name="model" 
+                    value={carToEdit?.model || ''}
+                    placeholder="Ex: M3 Competition"
+                    class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm text-text-secondary mb-1">Année</label>
+                  <input 
+                    type="number" 
+                    name="year" 
+                    value={carToEdit?.year || ''}
+                    placeholder="2023"
+                    class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-text-secondary mb-1">Mois</label>
+                  <input 
+                    type="text" 
+                    name="month" 
+                    value={carToEdit?.month || ''}
+                    placeholder="03"
+                    class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-sm text-text-secondary mb-1">Carburant</label>
+                <select 
+                  name="fuel" 
+                  class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                  required
+                >
+                  <option value="" disabled selected={!carToEdit}>Choisir...</option>
+                  <option value="Essence" selected={carToEdit?.fuel === 'Essence'}>Essence</option>
+                  <option value="Diesel" selected={carToEdit?.fuel === 'Diesel'}>Diesel</option>
+                  <option value="Hybride" selected={carToEdit?.fuel === 'Hybride'}>Hybride</option>
+                  <option value="Hybride intégral essence/électrique" selected={carToEdit?.fuel === 'Hybride intégral essence/électrique'}>Hybride intégral</option>
+                  <option value="Électrique" selected={carToEdit?.fuel === 'Électrique'}>Électrique</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-sm text-text-secondary mb-1">Kilométrage</label>
+                <input 
+                  type="text" 
+                  name="mileage" 
+                  value={carToEdit?.mileage || ''}
+                  placeholder="Ex: 45'000 km"
+                  class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label class="block text-sm text-text-secondary mb-1">Transmission</label>
+                <select 
+                  name="transmission" 
+                  class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                  required
+                >
+                  <option value="" disabled selected={!carToEdit}>Choisir...</option>
+                  <option value="Automatique" selected={carToEdit?.transmission === 'Automatique'}>Automatique</option>
+                  <option value="Boîte manuelle" selected={carToEdit?.transmission === 'Boîte manuelle'}>Boîte manuelle</option>
+                  <option value="Manuelle robotisée" selected={carToEdit?.transmission === 'Manuelle robotisée'}>Manuelle robotisée</option>
+                  <option value="À variation continue" selected={carToEdit?.transmission === 'À variation continue'}>À variation continue</option>
+                </select>
+              </div>
+              
+              <div>
+                <label class="block text-sm text-text-secondary mb-1">Prix</label>
+                <input 
+                  type="text" 
+                  name="price" 
+                  value={carToEdit?.price || ''}
+                  placeholder="Ex: CHF 45'000"
+                  class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                  required
+                />
+              </div>
+              
+              <!-- Images Section -->
+              <div>
+                <label class="block text-sm text-text-secondary mb-1">Images</label>
+                <div id="images-container" class="space-y-2">
+                  {carToEdit?.images?.map((img, index) => (
+                    <div class="flex gap-2">
+                      <input 
+                        type="url" 
+                        name={`image-${index}`}
+                        value={img}
+                        placeholder="https://..."
+                        class="image-input flex-1 bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                        required={index === 0}
+                      />
+                      {index > 0 && (
+                        <button 
+                          type="button"
+                          class="remove-image-btn px-3 py-2 bg-red-500/10 text-red-400 rounded-lg hover:bg-red-500/20 transition-colors"
+                          onclick="this.parentElement.remove()"
+                        >
+                          ×
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  {!carToEdit?.images && (
+                    <input 
+                      type="url" 
+                      name="image-0"
+                      placeholder="https://..."
+                      class="image-input w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                      required
+                    />
+                  )}
+                </div>
+                <button 
+                  type="button"
+                  id="add-image-btn"
+                  class="mt-2 w-full py-2 border border-dashed border-white/20 text-white/50 rounded-lg hover:border-primary/50 hover:text-primary transition-colors text-sm"
+                >
+                  + Ajouter une image
+                </button>
+              </div>
+              
+              <div>
+                <label class="block text-sm text-text-secondary mb-1">Lien AutoScout24</label>
+                <input 
+                  type="url" 
+                  name="url" 
+                  value={carToEdit?.url || ''}
+                  placeholder="https://www.autoscout24.ch/..."
+                  class="w-full bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+                  required
+                />
+              </div>
+              
+              <div class="flex gap-3 pt-4">
+                <button 
+                  type="submit"
+                  class="flex-1 bg-primary text-bg font-semibold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  {carToEdit ? 'Mettre à jour' : 'Ajouter'}
+                </button>
+                {carToEdit && (
+                  <a 
+                    href="/admin"
+                    class="px-4 py-2.5 border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors"
+                  >
+                    Annuler
+                  </a>
+                )}
+              </div>
+            </form>
+            
+            <div class="mt-6 pt-6 border-t border-white/5">
+              <h3 class="text-sm font-medium text-white mb-3">Import / Export</h3>
+              <div class="flex gap-3">
+                <button 
+                  id="exportBtn"
+                  class="flex-1 px-3 py-2 bg-white/5 text-white text-sm rounded-lg hover:bg-white/10 transition-colors"
+                >
+                  Exporter JSON
+                </button>
+                <button 
+                  id="importBtn"
+                  class="flex-1 px-3 py-2 bg-white/5 text-white text-sm rounded-lg hover:bg-white/10 transition-colors"
+                >
+                  Importer JSON
+                </button>
+              </div>
+              <input 
+                type="file" 
+                id="importFile" 
+                accept=".json"
+                class="hidden"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- List Section -->
+        <div class="lg:col-span-2">
+          <!-- Instructions -->
+          <div class="mb-6 p-6 bg-primary/5 rounded-xl border border-primary/10">
+            <h3 class="text-white font-medium mb-2">ℹ️ Comment utiliser cette page</h3>
+            <ul class="text-sm text-white/50 space-y-1 list-disc list-inside">
+              <li>Remplissez le formulaire pour ajouter un nouveau véhicule</li>
+              <li>Cliquez sur l'icône ✏️ pour modifier un véhicule existant</li>
+              <li>Cliquez sur l'icône 🗑️ pour supprimer un véhicule</li>
+              <li>Utilisez "Exporter JSON" pour sauvegarder vos données</li>
+              <li>Utilisez "Importer JSON" pour restaurer une sauvegarde</li>
+              <li><strong class="text-white">Important :</strong> Les données sont stockées localement dans le navigateur</li>
+            </ul>
+          </div>
+          
+          <div class="bg-card rounded-xl border border-white/5 overflow-hidden">
+            <div class="px-6 py-4 border-b border-white/5 flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-white">
+                Liste des véhicules ({carsData.length})
+              </h2>
+              <button 
+                id="resetBtn"
+                class="text-sm text-red-400 hover:text-red-300 transition-colors"
+              >
+                Réinitialiser tout
+              </button>
+            </div>
+            
+            <div class="divide-y divide-white/5">
+              {carsData.map(car => (
+                <div class="p-4 flex items-center gap-4 hover:bg-white/[0.02] transition-colors">
+                  <img 
+                    src={car.image} 
+                    alt={`${car.make} ${car.model}`}
+                    class="w-20 h-14 object-cover rounded-lg bg-bg"
+                    onerror="this.src='https://placehold.co/80x56/141414/666?text=BLM'"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-white font-medium truncate">
+                      {car.make} {car.model}
+                    </h3>
+                    <p class="text-sm text-text-secondary">
+                      {car.year} · {car.fuel} · {car.mileage}
+                    </p>
+                    <p class="text-sm text-primary font-medium">
+                      {car.price}.–
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <a 
+                      href={`/admin?edit=${car.id}`}
+                      class="p-2 text-white/60 hover:text-primary transition-colors"
+                      title="Modifier"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                      </svg>
+                    </a>
+                    <button 
+                      class="delete-btn p-2 text-white/60 hover:text-red-400 transition-colors"
+                      data-id={car.id}
+                      title="Supprimer"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                    </button>
+                    <a 
+                      href={car.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="p-2 text-white/60 hover:text-secondary transition-colors"
+                      title="Voir sur AutoScout24"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Instructions -->
+          <div class="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/10">
+            <h3 class="text-white font-medium mb-2">ℹ️ Comment utiliser cette page</h3>
+            <ul class="text-sm text-text-secondary space-y-1 list-disc list-inside">
+              <li>Remplissez le formulaire pour ajouter un nouveau véhicule</li>
+              <li>Cliquez sur l'icône ✏️ pour modifier un véhicule existant</li>
+              <li>Cliquez sur l'icône 🗑️ pour supprimer un véhicule</li>
+              <li>Utilisez "Exporter JSON" pour sauvegarder vos données</li>
+              <li>Utilisez "Importer JSON" pour restaurer une sauvegarde</li>
+              <li><strong>Important :</strong> Les données sont stockées localement dans le navigateur</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script define:vars={{ carsData }}>
+    // Storage key
+    const STORAGE_KEY = 'blmcars_admin_data';
+    
+    // Load cars from localStorage or use default
+    let cars = [...carsData];
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        cars = JSON.parse(stored);
+      } catch (e) {
+        console.error('Error loading stored cars:', e);
+      }
+    }
+    
+    // Save to localStorage
+    function saveCars() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cars));
+    }
+    
+    // Generate numeric values from text
+    function parseNumericValues(car) {
+      const yearNumeric = parseInt(car.year) || 0;
+      const mileageNumeric = parseInt(car.mileage.replace(/[^0-9]/g, '')) || 0;
+      const priceNumeric = parseInt(car.price.replace(/[^0-9]/g, '')) || 0;
+      return { ...car, yearNumeric, mileageNumeric, priceNumeric };
+    }
+    
+    // Get images from form
+    function getImagesFromForm() {
+      const inputs = document.querySelectorAll('.image-input');
+      return Array.from(inputs).map(input => input.value).filter(url => url.trim() !== '');
+    }
+    
+    // Add image button
+    document.getElementById('add-image-btn')?.addEventListener('click', () => {
+      const container = document.getElementById('images-container');
+      const index = container.querySelectorAll('.image-input').length;
+      
+      const div = document.createElement('div');
+      div.className = 'flex gap-2';
+      div.innerHTML = `
+        <input 
+          type="url" 
+          name="image-${index}"
+          placeholder="https://..."
+          class="image-input flex-1 bg-bg border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
+        />
+        <button 
+          type="button"
+          class="remove-image-btn px-3 py-2 bg-red-500/10 text-red-400 rounded-lg hover:bg-red-500/20 transition-colors"
+          onclick="this.parentElement.remove()"
+        >
+          ×
+        </button>
+      `;
+      container.appendChild(div);
+    });
+    
+    // Handle form submission
+    document.getElementById('carForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const id = parseInt(formData.get('id'));
+      const images = getImagesFromForm();
+      
+      if (images.length === 0) {
+        alert('Veuillez ajouter au moins une image');
+        return;
+      }
+      
+      const car = parseNumericValues({
+        id,
+        make: formData.get('make'),
+        model: formData.get('model'),
+        year: formData.get('year'),
+        month: formData.get('month'),
+        fuel: formData.get('fuel'),
+        mileage: formData.get('mileage'),
+        transmission: formData.get('transmission'),
+        price: formData.get('price'),
+        images: images,
+        url: formData.get('url'),
+      });
+      
+      const existingIndex = cars.findIndex(c => c.id === id);
+      if (existingIndex >= 0) {
+        cars[existingIndex] = car;
+      } else {
+        cars.push(car);
+      }
+      
+      saveCars();
+      window.location.href = '/admin';
+    });
+    
+    // Handle delete - using event delegation for dynamically loaded content
+    document.addEventListener('click', (e) => {
+      const deleteBtn = e.target.closest('.delete-btn');
+      if (deleteBtn) {
+        const id = parseInt(deleteBtn.dataset.id);
+        if (confirm('Êtes-vous sûr de vouloir supprimer ce véhicule ?')) {
+          cars = cars.filter(c => c.id !== id);
+          saveCars();
+          window.location.reload();
+        }
+      }
+    });
+    
+    // Handle reset
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      if (confirm('Êtes-vous sûr de vouloir réinitialiser toutes les données ? Cela restaurera les véhicules par défaut.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        window.location.reload();
+      }
+    });
+    
+    // Handle export
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      const dataStr = JSON.stringify(cars, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `blmcars_backup_${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+    
+    // Handle import
+    document.getElementById('importBtn').addEventListener('click', () => {
+      document.getElementById('importFile').click();
+    });
+    
+    document.getElementById('importFile').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const imported = JSON.parse(event.target.result);
+          if (Array.isArray(imported) && imported.length > 0 && imported[0].id) {
+            cars = imported;
+            saveCars();
+            window.location.reload();
+          } else {
+            alert('Format de fichier invalide');
+          }
+        } catch (err) {
+          alert('Erreur lors de l\'import : ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+  </script>
+</Layout>

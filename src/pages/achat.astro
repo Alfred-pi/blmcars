@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CarCard from '../components/CarCard.astro';
+import carsData from '../data/cars.json';
+
+const title = "Nos Véhicules - BLM CARS";
+const description = "Découvrez tous nos véhicules d'occasion disponibles à la vente. Des voitures rigoureusement inspectées et prêtes à prendre la route.";
+---
+
+<Layout title={title} description={description}>
+  <Navbar />
+  
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative py-24 lg:py-32 overflow-hidden">
+      <!-- Background avec voiture -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="/assets/Geneva-BG.webp" 
+          alt="Background" 
+          class="w-full h-full object-cover opacity-30"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-bg via-bg/90 to-bg"></div>
+      </div>
+      
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-primary text-sm font-medium tracking-wider uppercase mb-4">Notre inventaire</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Tous nos véhicules
+          </h1>
+          <p class="text-lg text-white/50 max-w-xl mb-8">
+            Parcourez notre sélection de véhicules d'exception, rigoureusement inspectés et prêts à prendre la route.
+          </p>
+          
+          <!-- Stats inline -->
+          <div class="flex flex-wrap items-center gap-8">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl font-bold text-white">{carsData.length}</span>
+              <span class="text-sm text-white/40">véhicules<br/>disponibles</span>
+            </div>
+            <div class="w-px h-10 bg-white/10 hidden sm:block"></div>
+            <div class="flex items-center gap-3">
+              <span class="text-3xl font-bold text-primary">100%</span>
+              <span class="text-sm text-white/40">inspectés<br/>& garantis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cars Grid Section -->
+    <section class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Filters -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+          <div class="text-white/50">
+            <span class="text-white font-semibold" id="car-count">{carsData.length}</span> véhicules disponibles
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm text-white/50">Trier par :</span>
+            <select id="sort-select" class="bg-card border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-primary/50 cursor-pointer">
+              <option value="default">Par défaut</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="year-desc">Année récente</option>
+              <option value="year-asc">Année ancienne</option>
+              <option value="mileage-asc">Kilométrage croissant</option>
+              <option value="mileage-desc">Kilométrage décroissant</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Cars Grid -->
+        <div id="cars-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {carsData.map(car => (
+            <div class="car-item" data-id={car.id} data-price={car.priceNumeric} data-year={car.yearNumeric} data-mileage={car.mileageNumeric}>
+              <CarCard car={car} />
+            </div>
+          ))}
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="mt-16 p-8 lg:p-12 bg-card rounded-2xl border border-white/5 text-center">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+            Vous ne trouvez pas votre bonheur ?
+          </h2>
+          <p class="text-white/50 max-w-xl mx-auto mb-8">
+            Contactez-nous pour un mandat de recherche personnalisé. Nous mettons notre réseau et notre expertise à votre service pour trouver la perle rare.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="mailto:info@blmcars.ch" 
+              class="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-bg bg-primary rounded-xl hover:bg-primary/90 transition-all duration-200"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Nous contacter
+            </a>
+            <a 
+              href="tel:+41227966865" 
+              class="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white border border-white/20 rounded-xl hover:bg-white/5 transition-all duration-200"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              +41 22 796 68 65
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<script>
+  const sortSelect = document.getElementById('sort-select');
+  const carsGrid = document.getElementById('cars-grid');
+  const carItems = Array.from(document.querySelectorAll('.car-item'));
+  
+  sortSelect?.addEventListener('change', (e) => {
+    const sortValue = e.target.value;
+    
+    const sortedItems = [...carItems].sort((a, b) => {
+      const priceA = parseInt(a.dataset.price) || 0;
+      const priceB = parseInt(b.dataset.price) || 0;
+      const yearA = parseInt(a.dataset.year) || 0;
+      const yearB = parseInt(b.dataset.year) || 0;
+      const mileageA = parseInt(a.dataset.mileage) || 0;
+      const mileageB = parseInt(b.dataset.mileage) || 0;
+      
+      switch (sortValue) {
+        case 'price-asc':
+          return priceA - priceB;
+        case 'price-desc':
+          return priceB - priceA;
+        case 'year-desc':
+          return yearB - yearA;
+        case 'year-asc':
+          return yearA - yearB;
+        case 'mileage-asc':
+          return mileageA - mileageB;
+        case 'mileage-desc':
+          return mileageB - mileageA;
+        default:
+          return parseInt(a.dataset.id) - parseInt(b.dataset.id);
+      }
+    });
+    
+    sortedItems.forEach(item => {
+      carsGrid?.appendChild(item);
+    });
+  });
+</script>
