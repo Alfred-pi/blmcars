@@ -6,4 +6,6 @@ export default defineConfig({
     configFile: './tailwind.config.mjs'
   })],
   output: 'static',
+  site: 'https://alfred-pi.github.io',
+  base: '/blmcars/',
 });
