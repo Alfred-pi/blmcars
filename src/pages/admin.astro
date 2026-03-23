@@ -25,11 +25,11 @@ const nextId = Math.max(...carsData.map(c => c.id), 0) + 1;
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-4">
-            <a href="/" class="text-white font-bold text-xl">BLM CARS</a>
+            <a href="/blmcars/" class="text-white font-bold text-xl">BLM CARS</a>
             <span class="text-text-secondary">/</span>
             <span class="text-primary font-medium">Admin</span>
           </div>
-          <a href="/" class="text-sm text-text-secondary hover:text-white transition-colors">
+          <a href="/blmcars/" class="text-sm text-text-secondary hover:text-white transition-colors">
             ← Retour au site
           </a>
         </div>
@@ -218,7 +218,7 @@ const nextId = Math.max(...carsData.map(c => c.id), 0) + 1;
                 </button>
                 {carToEdit && (
                   <a 
-                    href="/admin"
+                    href="/blmcars/admin"
                     class="px-4 py-2.5 border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors"
                   >
                     Annuler
