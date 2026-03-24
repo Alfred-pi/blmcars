@@ -68,14 +68,14 @@ const faqs = [
       
       <!-- Content -->
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-20">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 tracking-tight max-w-3xl">
+        <h1 class="hero-animate text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 tracking-tight max-w-3xl">
           Achat & Vente de<br />
           <span class="text-primary">Voitures à Genève</span>
         </h1>
-        <p class="text-lg sm:text-xl text-white/60 max-w-xl mb-10">
+        <p class="hero-animate hero-animate-delay-1 text-lg sm:text-xl text-white/60 max-w-xl mb-10">
           Découvrez notre sélection de véhicules d'occasion, rigoureusement inspectés pour une performance et une fiabilité sans compromis.
         </p>
-        <div class="flex flex-col sm:flex-row items-start gap-4">
+        <div class="hero-animate hero-animate-delay-2 flex flex-col sm:flex-row items-start gap-4">
           <a 
             href="/achat" 
             class="inline-flex items-center px-8 py-4 text-base font-semibold text-bg bg-primary rounded-xl hover:bg-primary/90 transition-all duration-200"
@@ -102,7 +102,7 @@ const faqs = [
     <!-- Nos Voitures Section -->
     <section id="cars" class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14">
+        <div class="text-center mb-14" data-reveal>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             Nos Voitures
           </h2>
@@ -112,14 +112,14 @@ const faqs = [
         </div>
         
         <!-- Cars Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" data-stagger>
           {featuredCars.map(car => (
             <CarCard car={car} />
           ))}
         </div>
         
         <!-- View All Button -->
-        <div class="text-center mt-12">
+        <div class="text-center mt-12" data-reveal>
           <a 
             href="/achat" 
             class="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-primary border border-primary/30 rounded-xl hover:bg-primary/10 transition-all duration-200"
@@ -138,15 +138,15 @@ const faqs = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <!-- Images -->
-          <div class="flex flex-col gap-4">
-            <div class="rounded-2xl overflow-hidden aspect-[16/10]">
+          <div class="flex flex-col gap-4" data-reveal="left">
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] img-zoom">
               <img 
                 src="/assets/blm-showroom-ferrari.jpg" 
                 alt="Ferrari F360 dans le showroom BLM CARS" 
                 class="w-full h-full object-cover"
               />
             </div>
-            <div class="rounded-2xl overflow-hidden aspect-[16/10]">
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] img-zoom">
               <img 
                 src="/assets/blm-facade.jpg" 
                 alt="Façade du garage BLM CARS à Aïre, Genève" 
@@ -156,7 +156,7 @@ const faqs = [
           </div>
           
           <!-- Content -->
-          <div>
+          <div data-reveal="right">
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               Qui sommes-nous ?
             </h2>
@@ -170,12 +170,12 @@ const faqs = [
             </div>
             <div class="mt-8 flex items-center gap-8">
               <div>
-                <div class="text-4xl font-bold text-primary">15+</div>
+                <div class="text-4xl font-bold text-primary"><span data-count="15" data-suffix="+">0</span></div>
                 <div class="text-sm text-text-secondary">Années d'expérience</div>
               </div>
               <div class="w-px h-12 bg-white/10"></div>
               <div>
-                <div class="text-4xl font-bold text-primary">500+</div>
+                <div class="text-4xl font-bold text-primary"><span data-count="500" data-suffix="+">0</span></div>
                 <div class="text-sm text-text-secondary">Clients satisfaits</div>
               </div>
             </div>
@@ -187,7 +187,7 @@ const faqs = [
     <!-- Services Section -->
     <section id="services" class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14">
+        <div class="text-center mb-14" data-reveal>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             Nos services sur mesure
           </h2>
@@ -197,7 +197,7 @@ const faqs = [
         </div>
         
         <!-- Services Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-stagger>
           {services.map(service => (
             <div class="group bg-card rounded-2xl p-8 border border-white/5 hover:border-primary/20 transition-all duration-300">
               <!-- Icon -->
@@ -232,7 +232,7 @@ const faqs = [
     <!-- FAQ Section -->
     <section id="faq" class="py-20 lg:py-28 bg-card">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14">
+        <div class="text-center mb-14" data-reveal>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             FAQ
           </h2>
@@ -242,7 +242,7 @@ const faqs = [
         </div>
         
         <!-- FAQ Items -->
-        <div class="space-y-4">
+        <div class="space-y-4" data-stagger>
           {faqs.map((faq, index) => (
             <details class="group bg-bg rounded-xl border border-white/5 overflow-hidden">
               <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -261,7 +261,7 @@ const faqs = [
         </div>
         
         <!-- Contact CTA -->
-        <div class="mt-12 text-center p-8 bg-primary/5 rounded-2xl border border-primary/10">
+        <div class="mt-12 text-center p-8 bg-primary/5 rounded-2xl border border-primary/10" data-reveal="scale">
           <h3 class="text-xl font-semibold text-white mb-2">
             Vous avez d'autres questions ?
           </h3>
