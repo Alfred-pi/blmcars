@@ -1,183 +1,147 @@
 [
   {
-    "id": 1,
-    "make": "Land Rover",
-    "model": "Range Rover Sport 3.0 SDV6 HSE Automatic",
-    "year": "2015",
-    "yearNumeric": 2015,
-    "month": "",
-    "fuel": "Diesel",
-    "mileage": "176'507 km",
-    "mileageNumeric": 176507,
-    "transmission": "Automatique",
-    "price": "CHF 19'490",
-    "priceNumeric": 19490,
-    "images": [
-      "https://listing-images.autoscout24.ch/118/20467118/885380419.jpg?w=660&q=90"
-    ],
-    "url": "https://www.autoscout24.ch/fr/d/land-rover-range-rover-sport-30-sdv6-hse-automatic-20467118"
-  },
-  {
-    "id": 2,
-    "make": "BMW",
-    "model": "X4 xDrive 20d M Sport Steptronic",
+    "id": 16,
+    "make": "Mercedes-Benz",
+    "model": "GLC 63 S AMG 4Matic+ 9G-Tronic",
     "year": "2018",
     "yearNumeric": 2018,
-    "month": "",
-    "fuel": "Diesel",
-    "mileage": "80'403 km",
-    "mileageNumeric": 80403,
-    "transmission": "Automatique",
-    "price": "CHF 28'500",
-    "priceNumeric": 28500,
-    "images": [
-      "https://listing-images.autoscout24.ch/86/20412086/105122100.jpg?w=660&q=90"
-    ],
-    "url": "https://www.autoscout24.ch/fr/d/bmw-x4-xdrive-20d-m-sport-steptronic-20412086"
-  },
-  {
-    "id": 3,
-    "make": "Honda",
-    "model": "FR-V 1.8i Comfort Automatic",
-    "year": "2007",
-    "yearNumeric": 2007,
-    "month": "",
+    "month": "01",
     "fuel": "Essence",
-    "mileage": "159'572 km",
-    "mileageNumeric": 159572,
+    "mileage": "194'875 km",
+    "mileageNumeric": 194875,
     "transmission": "Automatique",
-    "price": "CHF 5'900",
-    "priceNumeric": 5900,
+    "price": "CHF 33'900",
+    "priceNumeric": 33900,
     "images": [
-      "https://listing-images.autoscout24.ch/434/20412434/197555203.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/877/20826877/1444978685.jpg?q=90&w=660"
     ],
-    "url": "https://www.autoscout24.ch/fr/d/honda-fr-v-18i-comfort-automatic-20412434"
+    "url": "https://www.autoscout24.ch/fr/d/mercedes-benz-glc-63-s-amg-4matic-9g-tronic-20826877"
   },
   {
-    "id": 4,
-    "make": "SKODA",
-    "model": "Kodiaq 2.0 Bi-TDI SCR RS 4x4 DSG",
-    "year": "2019",
-    "yearNumeric": 2019,
-    "month": "",
-    "fuel": "Diesel",
-    "mileage": "135'773 km",
-    "mileageNumeric": 135773,
+    "id": 17,
+    "make": "VW",
+    "model": "Golf 1.5 TSI EVO Comfortline DSG",
+    "year": "2020",
+    "yearNumeric": 2020,
+    "month": "02",
+    "fuel": "Essence",
+    "mileage": "131'547 km",
+    "mileageNumeric": 131547,
     "transmission": "Manuelle robotisée",
-    "price": "CHF 25'900",
-    "priceNumeric": 25900,
+    "price": "CHF 14'490",
+    "priceNumeric": 14490,
     "images": [
-      "https://listing-images.autoscout24.ch/858/20379858/1012392005.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/164/20822164/950120949.jpg?q=90&w=660"
     ],
-    "url": "https://www.autoscout24.ch/fr/d/skoda-kodiaq-20-bi-tdi-scr-rs-4x4-dsg-20379858"
+    "url": "https://www.autoscout24.ch/fr/d/vw-golf-15-tsi-evo-comfortline-dsg-20822164"
   },
   {
-    "id": 5,
-    "make": "BMW",
-    "model": "730d xDrive Steptronic",
-    "year": "2018",
-    "yearNumeric": 2018,
-    "month": "",
-    "fuel": "Diesel",
-    "mileage": "74'290 km",
-    "mileageNumeric": 74290,
-    "transmission": "Automatique",
-    "price": "CHF 39'900",
-    "priceNumeric": 39900,
-    "images": [
-      "https://listing-images.autoscout24.ch/573/20379573/104154292.jpg?w=660&q=90"
-    ],
-    "url": "https://www.autoscout24.ch/fr/d/bmw-730d-xdrive-steptronic-20379573"
-  },
-  {
-    "id": 6,
-    "make": "SMART",
-    "model": "fortwo Brabus softouch",
+    "id": 18,
+    "make": "Audi",
+    "model": "A1 Sportback Sport 1.4 TFSI Ambition S-tronic",
     "year": "2012",
     "yearNumeric": 2012,
-    "month": "",
+    "month": "10",
     "fuel": "Essence",
-    "mileage": "70'561 km",
-    "mileageNumeric": 70561,
+    "mileage": "143'262 km",
+    "mileageNumeric": 143262,
     "transmission": "Manuelle robotisée",
-    "price": "CHF 11'900",
-    "priceNumeric": 11900,
+    "price": "CHF 8'900",
+    "priceNumeric": 8900,
     "images": [
-      "https://listing-images.autoscout24.ch/622/20379622/1567085252.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/252/20801252/1490141072.jpg?q=90&w=660"
     ],
-    "url": "https://www.autoscout24.ch/fr/d/smart-fortwo-brabus-softouch-20379622"
+    "url": "https://www.autoscout24.ch/fr/d/audi-a1-sportback-sport-14-tfsi-ambition-s-tronic-20801252"
   },
   {
-    "id": 7,
-    "make": "Mercedes-Benz",
-    "model": "C 200 4Matic AMG Line",
-    "year": "2021",
-    "yearNumeric": 2021,
-    "month": "",
+    "id": 19,
+    "make": "Porsche",
+    "model": "Cayenne Coupé Tiptronic",
+    "year": "2024",
+    "yearNumeric": 2024,
+    "month": "07",
     "fuel": "Essence",
-    "mileage": "26'370 km",
-    "mileageNumeric": 26370,
+    "mileage": "9'957 km",
+    "mileageNumeric": 9957,
     "transmission": "Automatique",
-    "price": "CHF 39'900",
-    "priceNumeric": 39900,
+    "price": "CHF 114'900",
+    "priceNumeric": 114900,
     "images": [
-      "https://listing-images.autoscout24.ch/980/20342980/2012870270.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/862/20788862/1663903106.jpg?q=90&w=660"
     ],
-    "url": "https://www.autoscout24.ch/fr/d/mercedes-benz-c-200-4matic-amg-line-20342980"
+    "url": "https://www.autoscout24.ch/fr/d/porsche-cayenne-coupe-tiptronic-20788862"
   },
   {
-    "id": 8,
+    "id": 20,
     "make": "VW",
-    "model": "Tiguan 1.4TSI Comfortline R-Line 4Motion DSG",
-    "year": "2018",
-    "yearNumeric": 2018,
-    "month": "",
+    "model": "Touran 1.4 TSI Comfortline",
+    "year": "2014",
+    "yearNumeric": 2014,
+    "month": "01",
     "fuel": "Essence",
-    "mileage": "103'369 km",
-    "mileageNumeric": 103369,
+    "mileage": "98'325 km",
+    "mileageNumeric": 98325,
+    "transmission": "Manuelle",
+    "price": "CHF 9'900",
+    "priceNumeric": 9900,
+    "images": [
+      "https://listing-images.autoscout24.ch/listing/441/20741441/282581523.jpg?q=90&w=660"
+    ],
+    "url": "https://www.autoscout24.ch/fr/d/vw-touran-14-tsi-comfortline-20741441"
+  },
+  {
+    "id": 21,
+    "make": "MINI",
+    "model": "Countryman John Cooper Works ALL4 Steptronic",
+    "year": "2023",
+    "yearNumeric": 2023,
+    "month": "03",
+    "fuel": "Essence",
+    "mileage": "119'990 km",
+    "mileageNumeric": 119990,
+    "transmission": "Automatique",
+    "price": "CHF 21'490",
+    "priceNumeric": 21490,
+    "images": [
+      "https://listing-images.autoscout24.ch/listing/428/20713428/1444167451.jpg?q=90&w=660"
+    ],
+    "url": "https://www.autoscout24.ch/fr/d/mini-countryman-john-cooper-works-all4-steptronic-20713428"
+  },
+  {
+    "id": 22,
+    "make": "Mercedes-Benz",
+    "model": "GL 350 BlueTEC 4Matic 7G-TRONIC",
+    "year": "2013",
+    "yearNumeric": 2013,
+    "month": "10",
+    "fuel": "Diesel",
+    "mileage": "129'890 km",
+    "mileageNumeric": 129890,
+    "transmission": "Automatique",
+    "price": "CHF 29'900",
+    "priceNumeric": 29900,
+    "images": [
+      "https://listing-images.autoscout24.ch/listing/384/20543384/675094781.jpg?q=90&w=660"
+    ],
+    "url": "https://www.autoscout24.ch/fr/d/mercedes-benz-gl-350-bluetec-4matic-7g-tronic-20543384"
+  },
+  {
+    "id": 23,
+    "make": "Fiat",
+    "model": "595 1.4 16V Turbo Abarth Competizione Dualogic",
+    "year": "2020",
+    "yearNumeric": 2020,
+    "month": "05",
+    "fuel": "Essence",
+    "mileage": "53'190 km",
+    "mileageNumeric": 53190,
     "transmission": "Manuelle robotisée",
     "price": "CHF 19'900",
     "priceNumeric": 19900,
     "images": [
-      "https://listing-images.autoscout24.ch/868/20342868/274420585.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/497/20524497/985673032.jpg?q=90&w=660"
     ],
-    "url": "https://www.autoscout24.ch/fr/d/vw-tiguan-14tsi-comfortline-r-line-4motion-dsg-20342868"
-  },
-  {
-    "id": 9,
-    "make": "Aston Martin",
-    "model": "DBX 4.0 V8",
-    "year": "2021",
-    "yearNumeric": 2021,
-    "month": "",
-    "fuel": "Essence",
-    "mileage": "44'278 km",
-    "mileageNumeric": 44278,
-    "transmission": "Automatique",
-    "price": "CHF 103'900",
-    "priceNumeric": 103900,
-    "images": [
-      "https://listing-images.autoscout24.ch/194/20316194/463210140.jpg?w=660&q=90"
-    ],
-    "url": "https://www.autoscout24.ch/fr/d/aston-martin-dbx-40-v8-20316194"
-  },
-  {
-    "id": 10,
-    "make": "Mercedes-Benz",
-    "model": "GLE Coupé 500 AMG 4Matic 9G-Tronic",
-    "year": "2017",
-    "yearNumeric": 2017,
-    "month": "",
-    "fuel": "Essence",
-    "mileage": "98'771 km",
-    "mileageNumeric": 98771,
-    "transmission": "Automatique",
-    "price": "CHF 34'900",
-    "priceNumeric": 34900,
-    "images": [
-      "https://listing-images.autoscout24.ch/368/20359368/853850129.jpg?w=660&q=90"
-    ],
-    "url": "https://www.autoscout24.ch/fr/d/mercedes-benz-gle-coupe-500-amg-4matic-9g-tronic-20359368"
+    "url": "https://www.autoscout24.ch/fr/d/fiat-595-14-16v-turbo-abarth-competizione-dualogic-20524497"
   },
   {
     "id": 11,
@@ -185,71 +149,53 @@
     "model": "X4 xDrive 48V 20i Steptronic",
     "year": "2023",
     "yearNumeric": 2023,
-    "month": "",
-    "fuel": "Essence",
-    "mileage": "43'864 km",
-    "mileageNumeric": 43864,
+    "month": "03",
+    "fuel": "Hybride léger essence/électrique",
+    "mileage": "51'023 km",
+    "mileageNumeric": 51023,
     "transmission": "Automatique",
-    "price": "CHF 41'900",
-    "priceNumeric": 41900,
+    "price": "CHF 39'900",
+    "priceNumeric": 39900,
     "images": [
-      "https://listing-images.autoscout24.ch/97/20230097/1311419624.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/97/20230097/2094056465.jpg?q=90&w=660"
     ],
     "url": "https://www.autoscout24.ch/fr/d/bmw-x4-xdrive-48v-20i-steptronic-20230097"
   },
   {
-    "id": 12,
-    "make": "VW",
-    "model": "Golf 1.4 TSI Cup DSG",
-    "year": "2014",
-    "yearNumeric": 2014,
-    "month": "",
+    "id": 24,
+    "make": "MINI",
+    "model": "Cooper S Steptronic",
+    "year": "2017",
+    "yearNumeric": 2017,
+    "month": "05",
     "fuel": "Essence",
-    "mileage": "55'756 km",
-    "mileageNumeric": 55756,
-    "transmission": "Manuelle robotisée",
-    "price": "CHF 13'900",
-    "priceNumeric": 13900,
+    "mileage": "138'102 km",
+    "mileageNumeric": 138102,
+    "transmission": "Automatique",
+    "price": "CHF 12'990",
+    "priceNumeric": 12990,
     "images": [
-      "https://listing-images.autoscout24.ch/33/20204033/802665335.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/195/20732195/1893412905.jpg?q=90&w=660"
     ],
-    "url": "https://www.autoscout24.ch/fr/d/vw-golf-14-tsi-cup-dsg-20204033"
+    "url": "https://www.autoscout24.ch/fr/d/mini-cooper-s-steptronic-20732195"
   },
   {
-    "id": 13,
-    "make": "Mercedes-Benz",
-    "model": "A AMG 35 4Matic 8G-DCT",
-    "year": "2023",
-    "yearNumeric": 2023,
-    "month": "",
-    "fuel": "Essence",
-    "mileage": "29'864 km",
-    "mileageNumeric": 29864,
-    "transmission": "Manuelle robotisée",
-    "price": "CHF 46'900",
-    "priceNumeric": 46900,
-    "images": [
-      "https://listing-images.autoscout24.ch/122/20227122/2120213560.jpg?w=660&q=90"
-    ],
-    "url": "https://www.autoscout24.ch/fr/d/mercedes-benz-a-amg-35-4matic-8g-dct-20227122"
-  },
-  {
-    "id": 14,
+    "id": 2,
     "make": "BMW",
-    "model": "M4 Coupé DKG",
-    "year": "2015",
-    "yearNumeric": 2015,
-    "month": "",
-    "fuel": "Essence",
-    "mileage": "195'787 km",
-    "mileageNumeric": 195787,
-    "transmission": "Manuelle robotisée",
-    "price": "CHF 29'900",
-    "priceNumeric": 29900,
+    "model": "X4 xDrive 20d M Sport Steptronic",
+    "year": "2018",
+    "yearNumeric": 2018,
+    "month": "06",
+    "fuel": "Diesel",
+    "mileage": "80'403 km",
+    "mileageNumeric": 80403,
+    "transmission": "Automatique",
+    "price": "CHF 25'900",
+    "priceNumeric": 25900,
     "images": [
-      "https://listing-images.autoscout24.ch/133/20233133/1394293044.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/86/20412086/105122100.jpg?q=90&w=660"
     ],
-    "url": "https://www.autoscout24.ch/fr/d/bmw-m4-coupe-dkg-20233133"
+    "url": "https://www.autoscout24.ch/fr/d/bmw-x4-xdrive-20d-m-sport-steptronic-20412086"
   },
   {
     "id": 15,
@@ -257,7 +203,7 @@
     "model": "F360 Modena Berlinetta",
     "year": "2000",
     "yearNumeric": 2000,
-    "month": "",
+    "month": "05",
     "fuel": "Essence",
     "mileage": "41'628 km",
     "mileageNumeric": 41628,
@@ -265,8 +211,26 @@
     "price": "CHF 69'900",
     "priceNumeric": 69900,
     "images": [
-      "https://listing-images.autoscout24.ch/401/11337401/0.jpg?w=660&q=90"
+      "https://listing-images.autoscout24.ch/listing/401/11337401/0.jpg?q=90&w=660"
     ],
     "url": "https://www.autoscout24.ch/fr/d/ferrari-f360-modena-berlinetta-11337401"
+  },
+  {
+    "id": 25,
+    "make": "SMART",
+    "model": "fortwo passion softouch",
+    "year": "2008",
+    "yearNumeric": 2008,
+    "month": "06",
+    "fuel": "Essence",
+    "mileage": "131'163 km",
+    "mileageNumeric": 131163,
+    "transmission": "Manuelle robotisée",
+    "price": "CHF 3'990",
+    "priceNumeric": 3990,
+    "images": [
+      "https://listing-images.autoscout24.ch/listing/526/20702526/1974016888.jpg?q=90&w=660"
+    ],
+    "url": "https://www.autoscout24.ch/fr/d/smart-fortwo-passion-softouch-20702526"
   }
 ]

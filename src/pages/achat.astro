@@ -149,7 +149,7 @@ const description = "Découvrez tous nos véhicules d'occasion disponibles à la
         case 'mileage-desc':
           return mileageB - mileageA;
         default:
-          return parseInt(a.dataset.id) - parseInt(b.dataset.id);
+          return carItems.indexOf(a) - carItems.indexOf(b);
       }
     });
     
